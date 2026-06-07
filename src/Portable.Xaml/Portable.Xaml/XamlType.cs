@@ -613,7 +613,7 @@ namespace Portable.Xaml
 			}
 		}
 
-		protected virtual bool ValidateRuntimeHandler(MethodInformation mi)
+		protected virtual bool ValidateRuntimeHandler(MethodInfo mi)
 		{
 			var args = mi.GetParameters();
 			if (args.Length != 2)
@@ -627,7 +627,7 @@ namespace Portable.Xaml
 			return true;
 		}
 
-		protected virtual bool ValidateRuntimeSetMethod(MethodInformation mi)
+		protected virtual bool ValidateRuntimeSetMethod(MethodInfo mi)
 		{
 			// looks like the return type is *ignored*
 			//if (mi.ReturnType != typeof (void))
@@ -639,7 +639,7 @@ namespace Portable.Xaml
 			return true;
 		}
 
-		protected virtual bool ValidateRuntimeGetMethod(MethodInformation mi)
+		protected virtual bool ValidateRuntimeGetMethod(MethodInfo mi)
 		{
 			if (mi.ReturnType == typeof(void))
 				return false;
